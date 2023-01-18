@@ -10,53 +10,50 @@ I want a program that I can add todo tasks to and see a list of them.
 
 _Include the initializer and public methods with all parameters and return values._
 
+'''ruby
 Class ToDo
+
 def initialize()
- #...
+ #...Initialize empty array
 end
 
-
-
-```ruby
-# EXAMPLE
-
-class Reminder
-  def initialize(name) # name is a string
-    # ...
-  end
-
-  def remind_me_to(task) # task is a string
-    # No return value
-  end
-
-  def remind()
-    # Throws an exception if no task is set
-    # Otherwise, returns a string reminding the user to do the task
-  end
+def add(Task) # Task will be a string
+ #...Throw error if Task is empty
+ #...Tasks should be added to the array
 end
-```
+
+def view_tasks()
+ #...Return the list of tasks, as a string
+ #...Return a message if the task list is empty
+end
+
+end
 
 ## 3. Create Examples as Tests
 
 _Make a list of examples of how the class will behave in different situations._
 
-```ruby
-# EXAMPLE
+'''ruby
 
-# 1
-reminder = Reminder("Kay")
-reminder.remind_me_to("Walk the dog")
-reminder.remind() # => "Walk the dog, Kay!"
+#1
+task = ToDo.new()
+task.add("") => Raise error message, "Task is empty and so it cannot be added to the Task list"
 
-# 2
-reminder = Reminder("Kay")
-reminder.remind() # fails with "No task set."
+#2
+task = ToDo.new()
+task.view_tasks => Return a message "The list is empty. Enjoy your day!"
 
-# 3
-reminder = Reminder("Kay")
-reminder.remind_me_to("")
-reminder.remind() # => ", Kay!"
-```
+#3
+task = Todo.new()
+task.add("Walk the dog") 
+task.view_tasks() => Returns "Your tasks are as follows: Walk the dog"
+
+#4
+task = Todo.new()
+tasks = task.add("Walk the dog") #Trial
+tasks = task.add("Clean the dishes")
+task.view_tasks() => Returns "Your tasks are as follows: Walk the dog, Clean the dishes"
+
 
 _Encode each example as a test. You can add to the above list as you go._
 
