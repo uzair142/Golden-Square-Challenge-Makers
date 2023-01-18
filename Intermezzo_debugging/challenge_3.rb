@@ -8,7 +8,9 @@ def get_most_common_letter(text)
       end
      end
    print counter.to_a.sort_by { |k, v| v }[-1][0]
-end
+end 
+
+
 
 # Intended output:
 # 
